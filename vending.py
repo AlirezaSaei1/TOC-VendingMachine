@@ -44,6 +44,7 @@ def main():
                     inp_so_far = inp_so_far + inp
                 elif inp == "b":
                     cur_state = STATES.index("Refill")
+                    inp_so_far = inp_so_far + inp
                 elif inp == "0":
                     done(cur_state, inp_so_far)
                     break
