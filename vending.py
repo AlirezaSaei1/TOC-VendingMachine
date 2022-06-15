@@ -32,12 +32,12 @@ def main():
     inp_so_far = ""
     while True:
         if STATES[cur_state] == "Standby":
-            inp = input("[a]. Menu\n [b]. refill vendor")
+            inp = input("[a]. Menu\n[b]. refill vendor\n")
             if inp == "a":
                 cur_state = STATES.index("Menu")
                 inp_so_far = inp_so_far + inp
             elif inp == "b":
-                cur_state = STATES.index("refill")
+                cur_state = STATES.index("Refill")
             elif inp == "0":
                 done(cur_state, inp_so_far)
                 break
@@ -46,7 +46,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "Refill":
-            inp = input("[a]. Refill Done")
+            inp = input("[a]. Refill Done\n")
             if inp == "a":
                 cur_state = STATES.index("Standby")
                 inp_so_far = inp_so_far + inp
@@ -58,7 +58,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "Menu":
-            inp = input("[a]. Order")
+            inp = input("[a]. Order\n")
             if inp == "a":
                 cur_state = STATES.index("Order")
                 inp_so_far = inp_so_far + inp
@@ -70,7 +70,8 @@ def main():
                 break
 
         elif STATES[cur_state] == "Order":
-            inp = input("[aa]. Product 1\n[bb]. Product 2\n[cc]. Product 3\n[dd]. Product 4\n[ee]. Product 5\n")
+            inp = input(
+                "[aa]. Product 1\n[bb]. Product 2\n[cc]. Product 3\n[dd]. Product 4\n[ee]. Product 5\n")
             if inp == "aa" or inp == "bb" or inp == "cc" or inp == "dd" or inp == "ee":
                 cur_state = STATES.index("Quantity")
                 inp_so_far = inp_so_far + inp
@@ -82,7 +83,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "Quantity":
-            inp = input("[a]. Check\n [d]. Cancel")
+            inp = input("[a]. Check\n[d]. Cancel\n")
             if inp == "a":
                 cur_state = STATES.index("Check")
                 inp_so_far = inp_so_far + inp
@@ -97,7 +98,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "ClearCart":
-            inp = input("[f]. Return to Menu")
+            inp = input("[f]. Return to Menu\n")
             if inp == "f":
                 cur_state = STATES.index("Menu")
                 inp_so_far = inp_so_far + inp
@@ -109,7 +110,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "Check":
-            inp = input("[a]. Proceed\n[d]. Cancel")
+            inp = input("[a]. Proceed\n[d]. Cancel\n")
             if inp == "a":
                 cur_state = STATES.index("Confirm")
                 inp_so_far = inp_so_far + inp
@@ -124,7 +125,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "Confirm":
-            inp = input("[a]. Confirm\n[b]. Add Product\n[d]. Cancel")
+            inp = input("[a]. Confirm\n[b]. Add Product\n[d]. Cancel\n")
             if inp == "a":
                 cur_state = STATES.index("Cart")
                 inp_so_far = inp_so_far + inp
@@ -142,7 +143,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "Cart":
-            inp = input("[a]. Pay\n[b]. Add Product\n[d]. Cancel")
+            inp = input("[a]. Pay\n[b]. Add Product\n[d]. Cancel\n")
             if inp == "a":
                 cur_state = STATES.index("pay")
                 inp_so_far = inp_so_far + inp
@@ -160,7 +161,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "pay":
-            inp = input("[a]. Payment Successful\n[e]. Payment Failed")
+            inp = input("[a]. Payment Successful\n[e]. Payment Failed\n")
             if inp == "a":
                 cur_state = STATES.index("payW")
                 inp_so_far = inp_so_far + inp
@@ -175,7 +176,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "payF":
-            inp = input("Payment failed.\n [d]. Cancel Order")
+            inp = input("Payment failed.\n[d]. Cancel Order\n")
             if inp == "d":
                 cur_state = STATES.index("ClearCart")
                 inp_so_far = inp_so_far + inp
@@ -187,7 +188,7 @@ def main():
                 break
 
         elif STATES[cur_state] == "payW":
-            inp = input("[aaa]. Eject Product")
+            inp = input("[aaa]. Eject Product\n")
             if inp == "aaa":
                 cur_state = STATES.index("Standby")
                 inp_so_far = inp_so_far + inp
